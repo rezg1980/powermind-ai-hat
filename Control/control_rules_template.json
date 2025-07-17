@@ -1,0 +1,44 @@
+{
+    "rules": [
+        {
+            "id": "rule1",
+            "condition": {
+                "power_greater_than": 500,
+                "duration_seconds": 10
+            },
+            "action": "turn_off",
+            "target": "relay_2",
+            "description": "Turn off relay 2 if power exceeds 500W for more than 10 seconds"
+        },
+        {
+            "id": "rule2",
+            "condition": {
+                "voltage_less_than": 10
+            },
+            "action": "turn_off",
+            "target": "relay_1",
+            "description": "Cut relay 1 if voltage drops below 10V"
+        },
+        {
+            "id": "rule3",
+            "condition": {
+                "time_range": [
+                    "06:00",
+                    "08:00"
+                ]
+            },
+            "action": "turn_on",
+            "target": "relay_3",
+            "description": "Turn on relay 3 for lights between 6:00 AM and 8:00 AM"
+        },
+        {
+            "id": "rule4",
+            "condition": {
+                "optimization_recommendation": "shutdown"
+            },
+            "action": "turn_off_all",
+            "target": "all_relays",
+            "description": "Shutdown all relays based on optimization layer advice"
+        }
+    ]
+}
